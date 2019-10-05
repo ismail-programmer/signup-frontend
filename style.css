@@ -1,0 +1,35 @@
+/* Background Styling. */
+body {
+    background-color: aliceblue;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 20px;
+}
+/* Header Styling. */
+div#start {
+    font-size: 15px;
+}
+/* Form Styling. */
+input#form {
+    padding: 5px;
+    width: 300px;
+    height: 30px;
+    margin: 5px;
+    border: 2px
+}
+/* State Selection Styling. */
+select#select {
+    padding: 5px;
+    width: 310px;
+    height: 40px;
+    margin: 5px;
+    border: 2px;
+}
+/* Submit Button Styling. */
+button#button {
+    background-color: skyblue;
+    width: 310px;
+    height: 30px;
+    margin: 5px;
+    border: 2px;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Submit Form</title>
+<script src=""></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: aliceblue;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            font-size: 20px;
+        }
+
+        div#start {
+            font-size: 15px;
+
+        }
+
+        input#form {
+            padding: 5px;
+            width: 300px;
+            height: 30px;
+            margin: 5px;
+            border: 2px
+        }
+
+        select#select {
+            padding: 5px;
+            width: 310px;
+            height: 40px;
+            margin: 5px;
+            border: 2px;
+        }
+
+        button#button {
+            background-color: skyblue;
+            width: 310px;
+            height: 30px;
+            margin: 5px;
+            border: 2px;
+        }
+div#info{
+    text-align: right;
+    font-style: italic;
+    
+}
+div#space{
+    height: 200px;
+
+}
+    </style>
+</head>
+
+<body>
+    <div id="start">
+        <h1>Create Account</h1>
+        <p>
+            Example of form validation built with React
+        </p>
+    </div>
+    <div id="form">
+        <form>
+            <input id="form" type="text" placeholder="Email Address" class="Email">
+            <br>
+            <input id="form" type="text" placeholder="Company Name" class="Company Name">
+            <br>
+            <input id="form" type="password" placeholder="Password" class="Password">
+            <br>
+            <input id="form" type="password" placeholder="Confirm Password" class="Password Confirmation">
+            <br>
+            <select id="select">
+                <option value=" Choose your state ">Choose your state</option> 
+                <option value="1 ">Faisalabad</option>
+                <option  value="2 ">Karachi</option>
+                <option  value="2 ">Islamabad</option>
+            </select><br>
+            <button id="button"  onClick="myFunction()">Create Account</button >
+        </form>
+    </div>
+    <div  id="space">
+
+    </div>
+    <div id="info">
+        <h3><b>
+            Programmed by: <br>
+                     M.ismail
+        </b>
+    </h3>
+    </div>
+</body>
+<script>
+
+    var fieldTags = [];
+    var fieldClasses = [];
+    fieldTags = document.getElementsByTagName("input");
+    
+    function myFunction() {
+        for (var i = 0; i < fieldTags.length; i++) {
+            fieldClasses[i] = fieldTags[i].className;
+            checkField(fieldClasses[i])
+
+        }
+
+    }
+    function checkField(fieldClass) {
+
+        var value = document.getElementsByClassName(fieldClass)[0].value;
+        if (value === "") {
+            alert(fieldClass + " required.");
+        }
+        if(value !== "" && fieldClass == "Password Confirmation" )
+        {
+            var passLimit = document.getElementsByClassName("Password")[0].value
+            var confirmPass = document.getElementsByClassName("Password Confirmation")[0].value
+            if(passLimit.length<8)
+            {
+                alert ("Password Must Contain atleast 8 characters.")
+            }
+            else if (confirmPass!==passLimit)
+            {  
+                alert("Confirm Password does not match.")
+            }
+            else
+            {
+                alert("Accont have been Created!!!!")
+            }
+        }
+
+    }
+    
+</script>
+</html>
